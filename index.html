@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>Play</title>
+        <script src="peerjs.min.js">
+        </script>
+        <script src="jquery.min.js">
+        </script>
+        <script>
+            peer = new Peer();
+            
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <form id="form">
+                <input class="tech under" maxlength='4' placeholder="code" id="code"/>
+                <input class="tech" maxlength='12' placeholder="name" id="name"/>
+                <input type="submit" class="button" value="play"/>
+            </form>
+        </div>
+        <script>
+            $("#form").submit(function() {
+                let conn = peer.connect($('#code').value);
+                conn.on('open', function() {
+                
+                conn.on('data', function(data) {
+                    console.log('Received', data);
+                });
+
+                
+                conn.send({c: 'setname', name: $('#name').value});
+                });
+                return false;
+            });
+        </script>
+    </body>
+</html>
