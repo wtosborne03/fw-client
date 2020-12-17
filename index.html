@@ -24,6 +24,7 @@
                 let conn = peer.connect($('#code').value);
                 conn.on('open', function() {
                 peer.on('error', function(e) {
+                    console.log('connection error');
                     swal('Room Not Found');
                 });
                 conn.on('data', function(data) {
