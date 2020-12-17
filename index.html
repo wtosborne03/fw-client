@@ -21,6 +21,7 @@
         </div>
         <script>
             $("#form").submit(function() {
+                console.log('connecting...');
                 let conn = peer.connect($('#code').value);
                 conn.on('open', function() {
                 peer.on('error', function(e) {
