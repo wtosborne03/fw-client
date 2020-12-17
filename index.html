@@ -6,6 +6,7 @@
         </script>
         <script src="jquery.min.js">
         </script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             peer = new Peer();
             
@@ -23,7 +24,9 @@
             $("#form").submit(function() {
                 let conn = peer.connect($('#code').value);
                 conn.on('open', function() {
-                
+                conn.on('error', function(e) {
+                    swal('Room Not Found');
+                });
                 conn.on('data', function(data) {
                     console.log('Received', data);
                 });
