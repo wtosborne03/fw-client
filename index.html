@@ -10,15 +10,6 @@
             peer = new Peer();
             
         </script>
-    </head>
-    <body>
-        <div id="main">
-            <form id="form">
-                <input class="tech under" maxlength='4' placeholder="code" id="code"/>
-                <input class="tech" maxlength='12' placeholder="name" id="name"/>
-                <input type="submit" class="button" value="play"/>
-            </form>
-        </div>
         <script>
             $("#form").submit(function() {
                 console.log('connecting...');
@@ -38,5 +29,15 @@
                 return false;
             });
         </script>
+    </head>
+    <body>
+        <div id="main">
+            <form id="form">
+                <input class="tech under" maxlength='4' placeholder="code" id="code"/>
+                <input class="tech" maxlength='12' placeholder="name" id="name"/>
+                <input type="submit" class="button" value="play"/>
+            </form>
+        </div>
+        
     </body>
 </html>
